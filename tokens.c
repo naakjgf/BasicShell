@@ -21,6 +21,16 @@ char* str_duplicate(const char *src) {
 	return dest;
 }
 
+void free_tokens(token *tokens) {
+    int i = 0;
+    while (tokens[i].type != 0) {
+        free(tokens[i].value); //freeing each string value in the token
+        i++;
+    }
+    free(tokens); //frees the token array itself
+}
+
+
 // Represents a string as a series of tokens
 token *tokenize(const char *input) {
 	token *tokens = malloc(MAX_INPUT_SIZE * sizeof(token));

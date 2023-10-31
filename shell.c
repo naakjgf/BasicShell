@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 
 		if (tokens[0].type == 0) {
 			// empty line
-			free(tokens);
+			free_tokens(tokens);
 			continue;
 		}
 
@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
 				//handling various types of commands, leaving the shell if user prompts 'exit'
 				if (strcmp(current_command[0].value, "exit") == 0) {
 					printf("Bye bye.");
-					free(tokens);
+					free_tokens(tokens);
 					return 0;
 				}
 
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
 			}
 		}
 
-		free(tokens);
+		free_tokens(tokens);
 	}
 	return 0;
 }

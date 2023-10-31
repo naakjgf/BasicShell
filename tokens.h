@@ -19,6 +19,8 @@ typedef struct {
   char *value;
 } token;
 
+void free_tokens(token *tokens);
+
 token *tokenize(const char *input);
 
 #endif
