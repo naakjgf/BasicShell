@@ -35,4 +35,3 @@ tokenize: $(TOKENIZE_OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
-
